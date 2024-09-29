@@ -1,37 +1,13 @@
 ﻿namespace LiskovSubstitution.App
 {
-    public class AlquilerMotocicleta : IAlquiler
+    public class AlquilerMotocicleta : Alquiler
     {
         private readonly Usuario usuario;
 
-        public AlquilerMotocicleta(Usuario usuario)
+        public AlquilerMotocicleta(Usuario usuario) : base(usuario)
         {
             this.usuario = usuario;
         }
-
-        public void Alquiler()
-        {
-            Console.WriteLine(string.Format("El usuario {0} {1} ha acaba de " +
-                                            "alquilar una motocicleta.",
-                              usuario.Nombre,
-                              usuario.Apellidos));
-        }
-
-        public void IniciarViaje()
-        {
-            Console.WriteLine(string.Format("El usuario {0} {1} ha acaba de iniciar " +
-                                            "un viaje en motocicleta.",
-                              usuario.Nombre,
-                              usuario.Apellidos));
-        }
-
-        public void FinalizarViaje()
-        {
-            Console.WriteLine(string.Format("El usuario {0} {1} ha finalizado el viaje",
-                              usuario.Nombre,
-                              usuario.Apellidos));
-        }
-
         public void Arrancar()
         {
             Console.WriteLine(string.Format("El usuario {0} {1} ha arrancado la motocicleta.",

@@ -2,7 +2,7 @@
 {
     public interface IAlquiler
     {
-        public void Alquiler();
+        public void Alquilar();
         public void IniciarViaje();
         public void FinalizarViaje();
     }
