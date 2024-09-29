@@ -1,27 +1,42 @@
 ﻿namespace LiskovSubstitution.App
 {
-    public class AlquilerBicicleta : Alquiler
+    public class AlquilerBicicleta : IAlquiler
     {
         private readonly Usuario usuario;
 
-        public AlquilerBicicleta(Usuario usuario) : base(usuario)
+        public AlquilerBicicleta(Usuario usuario)
         {
             this.usuario = usuario;
         }
 
-        public void Arrancar()
+        public void Alquiler()
         {
-            throw new NotImplementedException("Una bicicleta no se arranca");
+            Console.WriteLine(string.Format("El usuario {0} {1} ha acaba de " +
+                                            "alquilar una bicicleta.",
+                              usuario.Nombre,
+                              usuario.Apellidos));
+        }
+        public void IniciarViaje()
+        {
+            Console.WriteLine(string.Format("El usuario {0} {1} ha acaba de iniciar " +
+                                            "un viaje en bicicleta.",
+                              usuario.Nombre,
+                              usuario.Apellidos));
         }
 
-        public void IncluirViajero()
+        public void FinalizarViaje()
         {
-            throw new NotImplementedException("A una bicicleta no se le puede añadir un viajero");
+            Console.WriteLine(string.Format("El usuario {0} {1} ha finalizado " +
+                                            "el viaje en bicicleta.",
+                              usuario.Nombre,
+                              usuario.Apellidos));
         }
 
-        public void Repostar()
+        public void Pedalear()
         {
-            throw new NotImplementedException("Una bicicleta no reposta");
+            Console.WriteLine(string.Format("El usuario {0} {1} ha comenzado a pedalear.",
+                              usuario.Nombre,
+                              usuario.Apellidos));
         }
     }
 }
